@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<meta name="author" content="IPMC Classrooms" />
+		<meta name="keywords" content="Students, find a student, Lecturers" />
+		<meta name="description" content="A simple classroom management" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add a lecturer or student</title>
+		<link rel="shortcut icon" href="./icons/favicon.ico" />
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    
+    <body>
+        <!-- The top navigation -->
+        <ul class="topbar-nav">
+            <li><a href="home.html" class="brandname">IPMC</a></li>
+            </ul>  
+        <!-- Login form -->
+        <div class="login-div">
+            <a href="classroom.html" title="Back to classroom" style="text-decoration:none;color:var(--color-main);"><i class="fas fa-close fa-1x"></i> Back</a>
+            <div class="login-display-text">ADD</div>
+            <form method="POST" action="classroom.html" enctype="multipart/form-data">
+            <input type="hidden" name="size" value="1000000">
+             <label id='#bb'><img id="output_image" src="icons/user.png" style="border-radius:15px 50px;object-fit:contain;" alt="Photo" width="100%" height="250px">
+             <input type='file' id='file' accept='image/*'  onchange='preview_image(event)' name='student_image' hidden required />
+             </label>
+             </p>
+             <input type="text" class="my-input" name="student_name" autocomplete="off" placeholder="* Name" required/>
+             </p>
+             <input type="tel" class="my-input" name="student_number" autocomplete="off" maxlength="15" placeholder="* Number" required/>
+             </p>
+             <input type="email" class="my-input" name="student_email" autocomplete="off" placeholder="* Email"/>
+             </p>
+             <input type="text" class="my-input" name="student_id_card" autocomplete="off" placeholder="* Student ID Number" required/>
+             </p>
+             <input type="hidden" name="course_type" value="1" />
+             <input type="hidden" name="classroom_id" value="1" />
+             <input type="text" class="my-input" name="student_lecturer_name" autocomplte="off" placeholder="Lecturer name"/>
+             </p>
+             <input type="text" class="my-input" name="student_location" placeholder="* Location"/>
+             </p>
+             <input type="tel" class="my-input" name="student_year" maxlength="9" placeholder="* Year" required/>
+             </p>
+             <select class="select-box" name="student_type">
+                <option class="my-input" value="1" selected>Student</option>
+                <option class="my-input" value="2">Class Admin</option>
+                <option class="my-input" value="3">Lecturer</option>
+            </select>
+             </p>
+             <input type="password" class="my-input" name="student_password" autocomplete="off" placeholder="New password"/>
+            </p>
+            <input type="password" class="my-input" name="student_password" autocomplete="off" placeholder="Repeat password"/>
+            </p>
+             <input type="submit" class="my-submit" name="addstudent" value="ADD" />
+            </form>
+        </div>
+       <!-- End of Main -->
+		
+		
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="footer__row-container">
+						<a href="home.html" class="header__brand">
+							<img class="view__img-sub-signature" src="./icons/ipmc-logo-dark.png" />
+						</a>
+					</div>
+				
+					<div class="footer__row-container">
+						<div class="footer__topic">Our History</div>
+						<br/>
+							<div class="footer__text">
+									We have connected thousands of I.T geeks to the world for job opportunities and outstanding services base on our yearly statistics from our dear businesses. We are proud and we know you are that is why you are here.
+                            </div>
+					</div>
+				
+					<div class="footer__row-container">
+						<div class="footer__topic">Our Contact Info</div>
+						<br/>
+							<div class="footer__text">
+								Call<br/><i class="fas fa-phone-alt fa-1x icons__color"></i>&nbsp +233 551 410 868<br/><br/>
+								E-Mail<br/><i class="fas fa-envelope fa-1x icons__color"></i>&nbsp ipmcclass@ipmc.com.gh
+							</div>
+					</div>
+					
+					<div class="footer__row-container">
+						<div class="footer__topic">Newsletters</div>
+						<br/>
+						<form>
+							<input type="email" class="footer__input" placeholder="Email address..." required/><button type="submit" class="footer__button">Go</button>
+						</form>
+						<br/><br/>
+							
+						<div class="footer__topic">Social Media</div>
+						<br/>
+							<div class="footer__text">
+								<a href="#fb" class="footer__social-links" title="Visit us on facebook"><i class="fab fa-facebook fa-2x icons__color-gray"></i></a> <a href="#ig" class="footer__social-links" title="Visit us on instagram"><i class="fab fa-instagram fa-2x icons__color-gray"></i></a> <a href="#tw" class="footer__social-links" title="Visit us on twitter"><i class="fab fab fa-twitter fa-2x icons__color-gray"></i></a> <a href="#pt" class="footer__social-links" title="Visit us on pinterest"><i class="fab fa-pinterest fa-2x icons__color-gray"></i></a>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-div-border-top">
+				<span class="footer-text">&copy 2022</span>
+			</div>
+		</footer>
+
+         <!-- scripts to display onchnage -->
+         <script type="text/javascript">
+            function preview_image(event) 
+            {
+            var reader = new FileReader();
+            reader.onload = function()
+            {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+       
+    </body>
+</html>

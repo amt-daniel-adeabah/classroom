@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<meta name="author" content="IPMC Classrooms" />
+		<meta name="keywords" content="Students, find a student, Lecturers" />
+		<meta name="description" content="A simple classroom management" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Edit a lecturer or a student</title>
+		<link rel="shortcut icon" href="./icons/favicon.ico" />
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    
+    <body>
+        <!-- The top navigation -->
+        <ul class="topbar-nav">
+            <li><a href="home.html" class="brandname">IPMC</a></li>
+            </ul>  
+        <!-- Login form div class used here -->
+        <div class="login-div">
+            <!--Back link-->
+            <a href="student.html" title="Back to classroom" style="text-decoration:none;color:var(--color-main);"><i class="fas fa-close fa-1x"></i> Back</a>
+            <div class="login-display-text">EDIT</div>
+            <form method="POST" action="student.html" enctype="multipart/form-data">
+            <input type="hidden" name="size" value="1000000">
+             <label id='#bb'><img id="output_image" src="images/0011.jpg" style="border-radius:15px 50px;object-fit:contain;" alt="Photo" width="100%" height="250px">
+             <input type='file' id='file' accept='image/*'  onchange='preview_image(event)' name='image' hidden required />
+             </label>
+             <input type="hidden" name="student_id" value="" />
+             </p>
+             <input type="submit" class="my-submit" name="" value="CHANGE" />
+            </form>
+             </p>
+             <!--Action buttons -->
+             <div class="signup-desc-text">
+                <a href="#acceptordenydelete" onclick="document.getElementById('deleteprofile').style.display='block'" class="signup-link"> Delete profile?</a> 
+                | 
+                <a href="#addphotos" onclick="document.getElementById('addphotos').style.display='block'" class="signup-link"> Add photos?</a>
+            </div>
+             </p>
+             <form method="POST" action="student.html">
+             <input type="hidden" name="student_id" value="" />
+             <input type="text" class="my-input" name="student_name" autocomplete="off" placeholder="* Name" value="Maria Anders" required/>
+             </p>
+             <input type="tel" class="my-input" name="student_number" autocomplete="off" maxlength="15" placeholder="* Number" value="0551410868" required/>
+             </p>
+             <input type="email" class="my-input" name="student_email" autocomplete="off" placeholder="* Email" value="fiz.dannielz@gmail.com" required/>
+            </p>
+            <input type="text" class="my-input" name="student_id_card" autocomplete="off" placeholder="* Student ID Number" value="TK245533" required/>
+             </p>
+             <select class="select-box">
+				<option class="my-input" name="course_type" value="1">Software Engineering</option>
+                <option class="my-input" name="course_type" value="2">Graphics & Web Design</option>
+                <option class="my-input" name="course_type" value="3">Digital Marketing</option>
+                <option class="my-input" name="course_type" value="4">System Engineering</option>
+                <option class="my-input" name="course_type" value="5">Cyber Security</option>
+                <option class="my-input" name="course_type" value="6">MS Office</option>
+                <option class="my-input" name="course_type" value="7">Data Analytics</option>
+             </select>
+             </p>
+             <input type="text" class="my-input" name="student_lecturer_name" autocomplete="off" placeholder="Lecturer name"/>
+             </p>
+             <input type="text" class="my-input" name="student_location" placeholder="Location"/>
+             </p>
+             <input type="text" class="my-input" name="student_remarks" autocomplete="off" placeholder="Remarks"/>
+             </p>
+             <input type="range" class="my-input" name="student_score" placeholder="% Remarks"/>
+             </p>
+             <input type="text" class="my-input" name="student_year" maxlength="9" placeholder="* Year" value="2021-2022" required/>
+             </p>
+             <input type="submit" class="my-submit" name="" value="EDIT" />
+            </p>
+            </form>
+            <!--Action buttons -->
+            <div class="signup-desc-text">
+                <a href="#changepassword" onclick="document.getElementById('changepassword').style.display='block'" class="signup-link"> Change password?</a> 
+                | 
+                <a href="#addasignature" onclick="document.getElementById('addasignature').style.display='block'" class="signup-link"> Add a signature?</a>
+            </div>
+        </div>
+        <!-- End of Main -->
+		
+        <!--Add photos to profile-->
+        <div id="addphotos" class="modal">
+            <div class="login-div bg-color">
+                <div class="login-display-text">Add photo to profile?</div>
+                <form method="POST" action="student.html" enctype="multipart/form-data">
+                <input type="hidden" name="size" value="1000000">
+                <label id='#bb'><img id="output_image-add" src="icons/user.png" style="border-radius:15px 50px;object-fit:contain;" alt="Photo" width="100%" height="250px">
+                <input type='file' id='file' accept='image/*'  onchange='preview_image_add(event)' name='image' hidden required />
+                </label>
+                <input type="hidden" name="student_id" value="" />
+                </p>
+                <input type="submit" class="my-submit" name="" value="ADD" />
+                </p>
+                <center><a href="studentedit.html" onclick="document.getElementById('addphotos').style.display='block'" class="close signup-link"> Cancel </a></center>
+                </form>
+            </div>
+        </div>
+
+        <!--Add signature to profile-->
+        <div id="addasignature" class="modal">
+            <div class="login-div bg-color">
+                <div class="login-display-text">Add a signature?</div>
+                <form method="POST" action="student.html" enctype="multipart/form-data">
+                <input type="hidden" name="size" value="1000000">
+                <label id='#bb'><img id="output_image-add-signature" src="icons/add-img.png" style="border-radius:15px 50px;object-fit:contain;" alt="Photo" width="100%" height="250px">
+                <input type='file' id='file' accept='image/*'  onchange='preview_image_add_signature(event)' name='student_signature' hidden required />
+                </label>
+                <input type="hidden" name="student_id" value="" />
+                </p>
+                <input type="submit" class="my-submit" name="" value="ADD" />
+                </p>
+                <center><a href="studentedit.html" onclick="document.getElementById('addphotos').style.display='block'" class="close signup-link"> Cancel </a></center>
+                </form>
+            </div>
+        </div>
+
+         <!--change password-->
+         <div id="changepassword" class="modal">
+            <div class="login-div bg-color">
+                <div class="login-display-text">Change password?</div>
+                <form method="POST" action="student.html">
+                <input type="password" class="my-input" name="student_password" autocomplete="off" placeholder="New password"/>
+                </p>
+                <input type="password" class="my-input" name="student_password" autocomplete="off" placeholder="Repeat password"/>
+                </p>
+                <input type="hidden" name="student_id" value="" />
+                </p>
+                <input type="submit" class="my-submit" name="" value="CHANGE" />
+                </p>
+                <center><a href="studentedit.html" onclick="document.getElementById('addphotos').style.display='block'" class="close signup-link"> Cancel </a></center>
+                </form>
+            </div>
+        </div>
+
+        <!--Delete a profile permanently-->
+        <div id="deleteprofile" class="modal">
+            <div class="login-div bg-color">
+                <div class="login-display-text">Do you want to delete?</div>
+                <div class="login-display-desc">This action will permanently delete the profile and cannot be reversed</div>
+                </p>
+                <a href="classroom.html" style="text-decoration: none;"><input type="submit" class="my-submit" name="" value="Yes, continue" /></a> 
+                </p>
+                <center><a href="studentedit.html" onclick="document.getElementById('deleteprofile').style.display='block'" class="close signup-link"> Cancel </a></center>
+            </div>
+        </div>
+		
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="footer__row-container">
+						<a href="home.html" class="header__brand">
+							<img class="view__img-sub-signature" src="./icons/ipmc-logo-dark.png" />
+						</a>
+					</div>
+				
+					<div class="footer__row-container">
+						<div class="footer__topic">Our History</div>
+						<br/>
+							<div class="footer__text">
+									We have connected thousands of I.T geeks to the world for job opportunities and outstanding services base on our yearly statistics from our dear businesses. We are proud and we know you are that is why you are here.
+                            </div>
+					</div>
+				
+					<div class="footer__row-container">
+						<div class="footer__topic">Our Contact Info</div>
+						<br/>
+							<div class="footer__text">
+								Call<br/><i class="fas fa-phone-alt fa-1x icons__color"></i>&nbsp +233 551 410 868<br/><br/>
+								E-Mail<br/><i class="fas fa-envelope fa-1x icons__color"></i>&nbsp ipmcclass@ipmc.com.gh
+							</div>
+					</div>
+					
+					<div class="footer__row-container">
+						<div class="footer__topic">Newsletters</div>
+						<br/>
+						<form>
+							<input type="email" class="footer__input" placeholder="Email address..." required/><button type="submit" class="footer__button">Go</button>
+						</form>
+						<br/><br/>
+							
+						<div class="footer__topic">Social Media</div>
+						<br/>
+							<div class="footer__text">
+								<a href="#fb" class="footer__social-links" title="Visit us on facebook"><i class="fab fa-facebook fa-2x icons__color-gray"></i></a> <a href="#ig" class="footer__social-links" title="Visit us on instagram"><i class="fab fa-instagram fa-2x icons__color-gray"></i></a> <a href="#tw" class="footer__social-links" title="Visit us on twitter"><i class="fab fab fa-twitter fa-2x icons__color-gray"></i></a> <a href="#pt" class="footer__social-links" title="Visit us on pinterest"><i class="fab fa-pinterest fa-2x icons__color-gray"></i></a>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-div-border-top">
+				<span class="footer-text">&copy 2022</span>
+			</div>
+		</footer>
+
+        <!--Delete a profile, add a signature, change password and add photos script-->
+        <script>
+            // Get the modal adding photos to profile
+            var modal = document.getElementById('addphotos');
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <script>
+            // Get the modal deleting a profile
+            var modal = document.getElementById('deleteprofile');
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <script>
+            // Get the modal for changing a password
+            var modal = document.getElementById('changepassword');
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <script>
+            // Get the modal for signature
+            var modal = document.getElementById('addasignature');
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- scripts to display edit photo onchnage -->
+        <script type="text/javascript">
+            function preview_image(event) 
+            {
+            var reader = new FileReader();
+            reader.onload = function()
+            {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+
+        <!-- scripts to display add photo onchnage -->
+        <script type="text/javascript">
+            function preview_image_add(event) 
+            {
+            var reader = new FileReader();
+            reader.onload = function()
+            {
+            var output = document.getElementById('output_image-add');
+            output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+
+        <!-- scripts to display add signature onchnage -->
+        <script type="text/javascript">
+            function preview_image_add_signature(event) 
+            {
+            var reader = new FileReader();
+            reader.onload = function()
+            {
+            var output = document.getElementById('output_image-add-signature');
+            output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+        
+    </body>
+</html>
