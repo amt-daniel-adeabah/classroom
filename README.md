@@ -8,4 +8,4 @@ Why school community system?
 Project Documentaton - 
 [SCHOOL COMMUNITY SYSTEM - SWE(ONE) PROJECT DOCUMENTATIOON - WORD -Daniel Adeabah.pdf](https://github.com/danieladeabah/classroom/files/10741977/SCHOOL.COMMUNITY.SYSTEM.-.SWE.ONE.PROJECT.DOCUMENTATIOON.-.WORD.-Daniel.Adeabah.pdf)
 
-Project UI's avaialable in ".ui" folder.
+Project UI's available in ".ui" folder.
